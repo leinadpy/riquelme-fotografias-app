@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Helmet } from "react-helmet";
+import Menu from "./components/Menu";
+import styled from "styled-components";
 
-function App() {
+const App = () => {
+  const ContainerIndex = styled.div`
+    padding: 0 2.5rem; /* 40px */
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    @media (max-width: 60rem) {
+      /* 950px */
+      justify-content: start;
+    }
+  `;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Helmet>
+        <title>Riquelme Fotografías</title>
+      </Helmet>
+      <Menu />
+
+      <ContainerIndex>
+        <h1>Riquelme Fotografías</h1>
+      </ContainerIndex>
+    </>
   );
-}
+};
 
 export default App;
